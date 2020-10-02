@@ -1,5 +1,4 @@
 # Go Server
---------------------------
 A simple Go HTTP server that simply returns HTTP status codes and server time or errors in a JSON format. 
 Contains the ability to be built as a Docker image and run inside of a Docker container with error and success messages being submitted to Loggly.
 
