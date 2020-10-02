@@ -1,0 +1,4 @@
+github.com/gorilla/mux v1.8.0 h1:i40aqfkR1h2SlN9hojwV5ZA91wcXFOvkdNIeFDP5koI=
+github.com/gorilla/mux v1.8.0/go.mod h1:DVbg23sWSpFRCP0SfiEN6jmj59UnW/n46BH5rLB71So=
+github.com/jamespearly/loggly v0.0.0-20190206220007-041558ec1c7c h1:9S9VypQkty/ZlrRyy2045J9rZOcyCrhrxepLg+u9tAM=
+github.com/jamespearly/loggly v0.0.0-20190206220007-041558ec1c7c/go.mod h1:nsvBEjxR4pTLLz16KzrVyH+CFB6I3tv5eC06sZA+0uo=
