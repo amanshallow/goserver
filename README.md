@@ -11,7 +11,7 @@ Recommended Docker build and run procedure (clutterless):
 Process for removing container and images:
 
 	- $ docker stop aserver						// Stop container myagent
-	- $ docker rmi $(docker images -a -q)					// Remove all stopped images
+	- $ docker rmi $(docker images -a -q)				// Remove all stopped images
 	
 Changelog:
 -------------------------------
