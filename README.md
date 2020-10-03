@@ -19,3 +19,7 @@ Changelog:
 
 	- Initial server created with full deployment functionality including ability to run inside of Docker.
 
+[10/2/2020]: 
+
+	- Fixed: Implemented how HTTP status codes were returned when an invalid request was made (insures proper browser behavior).
+	- Tested: Ran inside of Docker on an EC2 instance, verified proper messages were sent to Loggly and web browser.
