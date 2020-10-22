@@ -30,4 +30,5 @@ Changelog:
 	- Added: DynamoDB functionality and error messages for Loggly.
 	- Added: Created a "asingh2/all" endpoint to return all data from a table encoded as JSON.
 	- Added: A "forbidden" function to handle invalid paths, return a HTTP 404 status and submit all possible attempts to Loggly.
+	- Updated: Dockerfile file to include multi-stage build process to shrink the size of final Docker image by nearly 99% (1.5GB to 19MB)
 	- Improved: Regex that handles invalid endpoint requests to include more invalid paths for logging purposes.
