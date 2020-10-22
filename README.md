@@ -23,3 +23,11 @@ Changelog:
 
 	- Fixed: Implemented how HTTP status codes were returned when an invalid request was made (insures proper browser behavior).
 	- Tested: Ran inside of Docker on an EC2 instance, verified proper messages were sent to Loggly and web browser.
+
+[10/22/2020]: 
+
+	- Updated: Status endpoint to return DynamoDB table name and number of item entries. 
+	- Added: DynamoDB functionality and error messages for Loggly.
+	- Added: Created a "asingh2/all" endpoint to return all data from a table encoded as JSON.
+	- Added: A "forbidden" function to handle invalid paths, return a HTTP 404 status and submit all possible attempts to Loggly.
+	- Improved: Regex that handles invalid endpoint requests to include more invalid paths for logging purposes.
