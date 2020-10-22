@@ -20,6 +20,7 @@ type Message struct {
 	RecordCount int64	`json:"RecordCount"`
 }
 
+// For unmarshaling DynamoDB data and encoding into JSON.
 type Information struct {
 	Date string `json:"date"`
 	Base string `json:"base"`
@@ -58,13 +59,13 @@ func status(w http.ResponseWriter, r *http.Request) {
     	
     	// Using a method other than "Get"
     if r.Method != http.MethodGet {
-    	client.EchoSend("warn", "Method: " + r.Method + ", Host: " + ip + ":" + port +  ", Requested Path: " + r.URL.Path + ", HTTP Status Code: " 	+ strconv.Itoa(http.StatusMethodNotAllowed) + ".")
+    	client.EchoSend("warn", "Method: " + r.Method + ", Host: " + ip + ":" + port + ", Requested Path: " + r.URL.Path + ", HTTP Status Code: " + strconv.Itoa(http.StatusMethodNotAllowed) + ".")
     	
 	w.WriteHeader(http.StatusMethodNotAllowed)
 	data := "405 - Method Not Allowed."
 	json.NewEncoder(w).Encode(data)
     } else { 
-    	client.EchoSend("info", "Method: " + r.Method + ", Host: " + ip + ":" + port +  ", Requested Path: " + r.URL.Path + ", HTTP Status Code: " + strconv.Itoa(http.StatusOK) + ".")
+    	client.EchoSend("info", "Method: " + r.Method + ", Host: " + ip + ":" + port + ", Requested Path: " + r.URL.Path + ", HTTP Status Code: " + strconv.Itoa(http.StatusOK) + ".")
     	
     	// Scan the entire asingh2-rates table.
     	var tableName string = "asingh2-rates"
@@ -99,7 +100,7 @@ func forbidden(w http.ResponseWriter, r *http.Request) {
         	client.Send("error", "Could not retrieve client's IP address.")
 	}
 	
-    	client.EchoSend("info", "Method: " + r.Method + ", Host: " + ip + ":" + port +  ", Requested Path: " + r.URL.Path + ", HTTP Status Code: " + strconv.Itoa(http.StatusNotFound) + ".")
+    	client.EchoSend("info", "Method: " + r.Method + ", Host: " + ip + ":" + port + ", Requested Path: " + r.URL.Path + ", HTTP Status Code: " + strconv.Itoa(http.StatusNotFound) + ".")
     	
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusNotFound)
@@ -130,13 +131,13 @@ func all(w http.ResponseWriter, r *http.Request) {
 	}
     	
     if r.Method != http.MethodGet {
-    	client.EchoSend("warn", "Method: " + r.Method + ", Host: " + ip + ":" + port +  ", Requested Path: " + r.URL.Path + ", HTTP Status Code: " 	+ strconv.Itoa(http.StatusMethodNotAllowed) + ".")
+    	client.EchoSend("warn", "Method: " + r.Method + ", Host: " + ip + ":" + port +  ", Requested Path: " + r.URL.Path + ", HTTP Status Code: " + strconv.Itoa(http.StatusMethodNotAllowed) + ".")
     	
 	w.WriteHeader(http.StatusMethodNotAllowed)
 	data := "405 - Method Not Allowed."
 	json.NewEncoder(w).Encode(data)
     } else {
-    	client.EchoSend("info", "Method: " + r.Method + ", Host: " + ip + ":" + port +  ", Requested Path: " + r.URL.Path + ", HTTP Status Code: " + strconv.Itoa(http.StatusOK) + ".")
+    	client.EchoSend("info", "Method: " + r.Method + ", Host: " + ip + ":" + port + ", Requested Path: " + r.URL.Path + ", HTTP Status Code: " + strconv.Itoa(http.StatusOK) + ".")
     	
     	// Instance of information struct for unmarshaling JSON.
     	var info []Information
