@@ -4,14 +4,19 @@ Contains the ability to be built as a Docker image and run inside of a Docker co
 
 Recommended Docker build and run procedure (clutterless):
 
-	- $ docker build -t server --rm --quiet .	 						// Builds quietly 
-	- $ docker run -p 8081:8000/tcp --env-file env.list -d --rm --name aserver server		// Runs detached, auto removal.
+	- $ docker build -t server --rm --quiet .	 						// Builds quietly and output hash once done.
+	- $ docker run -p 8081:8000/tcp --env-file env.list -d --rm --name aserver asingh2-rates-api	// Runs detached, auto removal when finished.
 	- $ docker logs aserver -f									// Live container output
 	
 Process for removing container and images:
 
 	- $ docker stop aserver						// Stop container myagent
 	- $ docker rmi $(docker images -a -q)				// Remove all stopped images
+	
+Process for saving Docker image as .tar file and loading into Docker.
+	
+	- $ docker save -o /Documents/agent.tar agent:latest		// Saves the agent image in Documents directory as agent.tar
+	- $ docker load -i /Documents/agent.tar				// Loads the agent.tar from Documents directory into Docker.
 	
 Changelog:
 -------------------------------
