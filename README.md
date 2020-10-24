@@ -5,7 +5,7 @@ Contains the ability to be built as a Docker image and run inside of a Docker co
 Recommended Docker build and run procedure (clutterless):
 
 	- $ docker build -t server --rm --quiet .	 						// Builds quietly and output hash once done.
-	- $ docker run -p 8081:8000/tcp --env-file env.list -d --rm --name aserver asingh2-rates-api	// Runs detached, auto removal when finished.
+	- $ docker run -p 8081:8080/tcp --env-file env.list -d --rm --name aserver asingh2-rates-api	// Runs detached, auto removal when finished.
 	- $ docker logs aserver -f									// Live container output
 	
 Process for removing container and images:
