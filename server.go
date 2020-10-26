@@ -174,6 +174,7 @@ func main() {
 	r.HandleFunc("/asingh2/status/", status)
 	r.HandleFunc("/asingh2/all", all)
 	r.HandleFunc("/asingh2/all/", all)
+	r.HandleFunc("/", forbidden)
 	r.HandleFunc("/{[a-z]+}", forbidden)
 	r.HandleFunc("/{[a-z]+}/", forbidden)
 	r.HandleFunc("/{[a-z]+}/{[a-z]+}", forbidden).
