@@ -32,9 +32,17 @@ Changelog:
 [10/22/2020]: 
 
 	- Updated: Status endpoint to return DynamoDB table name and number of item entries. 
-	- Added: DynamoDB functionality and error messages for Loggly.
-	- Added: Created a "asingh2/all" endpoint to return all data from a table encoded as JSON.
-	- Added: A "forbidden" function to handle invalid paths, return a HTTP 404 status and submit all possible attempts to Loggly.
+	- Implemented: DynamoDB functionality and error messages for Loggly.
+	- Implemented: Created a "asingh2/all" endpoint to return all data from a table encoded as JSON.
+	- Implemented: A "forbidden" function to handle invalid paths, return a HTTP 404 status and submit all possible attempts to Loggly.
 	- Updated: Dockerfile file to include multi-stage build process to shrink the size of final Docker image by nearly 99% (1.5GB to 19MB).
 	- Updated: Default listening port from 8000 to 8080/tcp.
 	- Improved: Regex that handles invalid endpoint requests to include more invalid paths for logging purposes.
+	
+[10/30/2020]:
+
+	- Implemented: A new "search" endpoint to query specific data from the API endpoint.
+	- Implemented: Input sanitization of all queries that are made to the endpoint using a package in Go.
+	- Implemented: Input validation and sanitization on top of using Go package to hopefully mitigate database attack vectors. 
+	- Improved: When Loggly messages were reported to make it less redundant and reflect what's actually happenning and when.
+	- Improved: Loggly message levels to reflect errors, warnings, and general information for better troubleshooting in Loggly. 
