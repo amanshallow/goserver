@@ -26,7 +26,7 @@ Changelog:
 
 [10/2/2020]: 
 
-	- Fixed: Implemented how HTTP status codes were returned when an invalid request was made (insures proper browser behavior).
+	- Fixed: How HTTP status codes were returned when an invalid request was made (insures proper browser behavior).
 	- Tested: Ran inside of Docker on an EC2 instance, verified proper messages were sent to Loggly and web browser.
 
 [10/22/2020]: 
@@ -46,3 +46,4 @@ Changelog:
 	- Implemented: Input validation and sanitization on top of using Go package to hopefully mitigate database attack vectors. 
 	- Improved: When Loggly messages were reported to make it less redundant and reflect what's actually happenning and when.
 	- Improved: Loggly message levels to reflect errors, warnings, and general information for better troubleshooting in Loggly. 
+	- Improved: Formatting of server.go code using "go fmt" command.
