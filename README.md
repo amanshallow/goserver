@@ -47,3 +47,8 @@ Changelog:
 	- Improved: When Loggly messages were reported to make it less redundant and reflect what's actually happenning and when.
 	- Improved: Loggly message levels to reflect errors, warnings, and general information for better troubleshooting in Loggly. 
 	- Improved: Formatting of server.go code using "go fmt" command.
+	
+[11/18/2020]:
+
+	- Updated: Location where Docker pulled required images from (DockerHub -> ECR).
+	- Added: "buildspec.yml" file for auto deployment using AWS CodePipeline.
