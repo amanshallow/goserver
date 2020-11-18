@@ -2,7 +2,7 @@
 ## and size reduction of the final Docker image.
 ## We specify the base image we need for our
 ## go application
-FROM golang:latest AS build
+FROM 817615305328.dkr.ecr.us-east-1.amazonaws.com/golang AS build
 ## Copy source
 WORKDIR /app
 COPY . .
@@ -11,7 +11,7 @@ RUN go mod download
 ## Build a statically-linked Go binary for Linux
 RUN CGO_ENABLED=0 GOOS=linux go build -a -o server .
 ## New build phase -- create binary-only image
-FROM alpine:latest
+FROM 817615305328.dkr.ecr.us-east-1.amazonaws.com/alpine
 ## Add support for HTTPS
 RUN apk update && \
     apk upgrade && \
